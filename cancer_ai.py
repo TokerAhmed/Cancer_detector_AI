@@ -16,10 +16,11 @@ def main():
     smoking_years = st.number_input('What is your smoking history (in years)?', min_value=0, max_value=100, step=1)
     diabetic = st.number_input('Are you diabetic?(1=Yes, 0=No)', min_value=0, max_value=1, step=1)
     cholesterol = st.number_input('What is your cholesterol level (in mg/dL)?', min_value=50, max_value=400, step=1)
+    blood_pressure=st.number.input("What is your avg blood pressure level(in numbers)?", min_value=20, max_value=300, step=1)
 
     # Ensure these column names match your model's features
     features = pd.DataFrame([[age, weight, smoking_years, diabetic, cholesterol]], 
-                            columns=['age', 'weight', 'smoking_years', 'diabetic', 'cholesterol'])
+                            columns=['age', 'weight', 'smoking_years', 'diabetic', 'cholesterol', blood_pressure])
 
     if st.button('Predict'):
         # Load the trained model from a file
